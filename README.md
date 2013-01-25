@@ -12,7 +12,7 @@ An animated CSS3 loading spinner with VML fallback for IE.
  * Small footprint (~1.9K gzipped)
  * MIT License
 
-## Usage
+## example
 
 ```javascript
 var spinner = new Spinner({color:'#fff', lines: 12}).spin(target);
