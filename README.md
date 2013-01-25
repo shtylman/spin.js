@@ -15,7 +15,48 @@ An animated CSS3 loading spinner with VML fallback for IE.
 ## Usage
 
 ```javascript
-new Spinner({color:'#fff', lines: 12}).spin(target);
+var spinner = new Spinner({color:'#fff', lines: 12}).spin(target);
 ```
+
+The `spin()` method creates the necessary HTML elements and starts the animation. If a target element is passed as argument, the spinner is added as first child and horizontally and vertically centered.
+
+## options
+
+The following options are available for the spinner constructor. Shown with their defaults.
+
+```
+lines: 13, // The number of lines to draw
+length: 7, // The length of each line
+width: 4, // The line thickness
+radius: 10, // The radius of the inner circle
+corners: 1, // Corner roundness (0..1)
+rotate: 0, // The rotation offset
+color: '#000', // #rgb or #rrggbb
+speed: 1, // Rounds per second
+trail: 60, // Afterglow percentage
+shadow: false, // Whether to render a shadow
+hwaccel: false, // Whether to use hardware acceleration
+className: 'spinner', // The CSS class to assign to the spinner
+zIndex: 2e9, // The z-index (defaults to 2000000000)
+top: 'auto', // Top position relative to parent in px
+left: 'auto' // Left position relative to parent in px
+```
+
+## api
+
+### spin([target])
+I called with a target, it will append and center itself into the target. If called without a target, just starts the spinner.
+
+The spinner container is exposed through the `.el` property if you wish to manually add it.
+
+```javascript
+var spinner = new Spinner().spin();
+target.appendChild(spinner.el);
+```
+
+### stop()
+Removes the UI elements from the DOM and stops the animation. Stopped spinners may be reused by calling spin() again.
+
+## demo
 
 For an interactive demo and a list of all supported options please refer to the [project's homepage](http://fgnass.github.com/spin.js).
