@@ -4,8 +4,7 @@ var Spinner = require('spin');
 var target = document.createElement('div');
 new Spinner().spin(target);
 
-target;
-// =>
+target // =>
 
 // spinners can be configured with any number of options
 // defaults, change what you want
@@ -30,5 +29,4 @@ var opt = {
 var target = document.createElement('div');
 new Spinner(opt).spin(target);
 
-target;
-// =>
+target // =>
