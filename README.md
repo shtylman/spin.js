@@ -15,7 +15,19 @@ An animated CSS3 loading spinner with VML fallback for IE.
 ## example
 
 ```javascript
-var spinner = new Spinner({color:'#fff', lines: 12}).spin(target);
+var Spinner = require('spin');
+
+var target = document.createElement('div');
+target.setAttribute('style', 'height: 60px');
+
+var spinner = new Spinner({
+    color:'#ddd',
+    lines: 12,
+    top: 10,
+    left: 10
+}).spin(target);
+
+target // =>
 ```
 
 The `spin()` method creates the necessary HTML elements and starts the animation. If a target element is passed as argument, the spinner is added as first child and horizontally and vertically centered.
@@ -50,8 +62,17 @@ I called with a target, it will append and center itself into the target. If cal
 The spinner container is exposed through the `.el` property if you wish to manually add it.
 
 ```javascript
+var Spinner = require('spin');
+
+// default spinner
 var spinner = new Spinner().spin();
+
+var target = document.createElement('div');
+
+// access spinner element with spinner.el
 target.appendChild(spinner.el);
+
+target // =>
 ```
 
 ### stop()
